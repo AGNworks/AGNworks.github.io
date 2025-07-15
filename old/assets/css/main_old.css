@@ -10,13 +10,12 @@ body{
 }
 
 .home-description{
-	font-style: italic;
-	font-weight: 600;
-	font-family: "Crimson";
-	font-size: 19px;
+	font-family: 'JetBarinsItalic', monospace;
+	font-weight: 550;
+	font-size: 15px;
     padding-top: 15px;
-    padding-bottom: 25px;
-    line-height: 29px;
+    padding-bottom: 15px;
+    line-height: 25px;
 
 }
 
@@ -24,6 +23,7 @@ body{
 	height: 40px;
 	width: 40px;
 	border: 1px solid #111;
+	border-radius: 8px;
 	line-height: 40px;
 	margin: 0 10px;
 	color: #111;
@@ -86,10 +86,10 @@ body{
 	color: #111;
 	font-style: italic;
 	border: 1px solid #111;
-	border-radius: 0px !important;
+	border-radius: 8px !important;
 	transition: all 0.4s ease-in-out;
 	margin-bottom: 20px;
-	font-family: "Crimson";
+	font-family: "JetBrains Mono", monospace;
 	font-size: 13px;
 	}
 
@@ -117,7 +117,8 @@ p{
 }
 
 .logo h4{
-	font-family: 'Josefin Sans';
+	font-family: 'JetBrains Mono', monospace;
+	font-size: 20px;
 }
 
 
@@ -351,4 +352,14 @@ footer{
 }
 .show{
 	display: block;
+}
+
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url('assets/fonts/fonts/ttf/JetBrainsMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'JetBarinsItalic';
+	src: url('assets/fonts/fonts/ttf/JetBrainsMono-Italic.ttf') format('truetype');
 }

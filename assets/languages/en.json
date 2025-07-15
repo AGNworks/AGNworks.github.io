@@ -1,0 +1,45 @@
+{
+    "home": {
+        "title": "Ádám Gábor Németh",
+        "description": "Hi, I am Ádám, Machine Learning (ML) Engineer living in Moscow, Russia. I am passionate about computer vision and classic engineering. I want to share this passion, working with like-minded individuals, bringing your projects to fruition.",
+        "buttons": [
+            "About",
+            "AI projects",
+            "More projects"
+        ]
+    },
+    "about": {
+        "title": "About",
+        "content": [
+            "Hello, my name is Ádám Gábor Németh. A ML Engineer, working on projects and creating not only virtually but in the physical world as well.",
+            "I graduated as a mechanical engineer from the Budapest University of Technology and Economics where I specialized in manufacturing automation. With time, I understood, that if I really want to keep step with the technological progress, I need to learn about neural networks and start using them in my projects. Therefore I completed a course at an <a href = 'https://neural-university.com' target='_blank'>online university</a>, with wrote a <a href='https://github.com/AGNworks/CarCam_NN' target='_blank'>diploma project</a> in the field of computer vision."
+        ],
+        "image": "assets/images/aboutAGN.jpg"
+    },
+    "it_projects": {
+        "title": "AI Projects",
+        "projects": [
+            {
+                "title": "Robot with computer vision",
+                "description": "On the first picture you can see..."
+            },
+            {
+                "title": "AI Security",
+                "description": "In this internship project..."
+            }
+        ],
+        "images": [
+            "assets/images/AI/diplomproject.png",
+            "assets/images/AI/gundetection.jpg"
+        ]
+    },
+    "more_projects": {
+        "title": "More Projects",
+        "projects": [
+            {
+                "title": "DMX-512 controller",
+                "description": "I created this gadget..."
+            }
+        ]
+    }
+}
