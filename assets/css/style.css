@@ -20,12 +20,11 @@
 }
 
 .container.main {
-    margin-top: 80px;
-    padding-top: 40px;
+    margin-top: 40px;
+    padding-top: 20px;
 }
 
-/* Your existing styles */
-.img-rabbit {
+.img-style {
     max-width: 100%;
     height: auto;
 }
@@ -34,8 +33,8 @@
     margin: 20px 0;
 }
 
-.btn-rabbit {
-    margin: 5px 0;
+.btn-groups {
+    margin: 3px 0;
 }
 
 .social a {
@@ -81,4 +80,41 @@
   font-size: 12px;
   text-align: center;
   font-weight: 500;
+}
+
+/* About Section Styles */
+#about_left, #about_right {
+    padding: 20px;
+}
+
+#watermark {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.marker {
+    position: absolute;
+    font-size: 120px;
+    opacity: 0.1;
+    z-index: -1;
+    top: -50px;
+    left: -20px;
+}
+
+.back {
+    margin-bottom: 5px;
+    border-color: black;
+    border-radius: 20%;
+    display: inline-block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #about_left, #about_right {
+        text-align: center;
+    }
+
+    #about_left img {
+        margin: 0 auto;
+    }
 }

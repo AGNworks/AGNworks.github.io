@@ -1,3 +1,7 @@
+// Set default language
+let currentLang = 'en';
+let currentSection = 'home';
+
 // Load content files
 function loadContent(lang) {
     return fetch(`assets/languages/${lang}.json`)
@@ -5,27 +9,28 @@ function loadContent(lang) {
 }
 
 // Update page content
-function updateContent(content) {
+function updateContent(content, section = 'home') {
     const app = document.getElementById('app');
 
-    app.innerHTML = `
-        <div class="container main">
-            <div class="row home">
-                <div class="col-md-6 left">
-                    <img class="img-responsive img-rabbit" src="assets/images/home.jpg">
-                </div>
-                <div class="col-md-6 text-center right">
-                    <div class="logo">
-                        <img src="assets/images/logoAGNsite.png">
-                        <h4>${content.home.title}</h4>
+    if (section === 'home') {
+        app.innerHTML = `
+            <div class="container main">
+                <div class="row home">
+                    <div class="col-md-6 left">
+                        <img class="img-responsive img-rabbit" src="assets/images/home.jpg">
                     </div>
-                    <p class="home-description">
-                        ${content.home.description}
-                    </p>
+                    <div class="col-md-6 text-center right">
+                        <div class="logo">
+                            <img src="assets/images/logoAGNsite.png">
+                            <h4>${content.home.title}</h4>
+                        </div>
+                        <p class="home-description">
+                            ${content.home.description}
+                        </p>
                     <div class="btn-group-vertical custom_btn animate__animated animate__slideInRight">
-                        <div class="btn btn-rabbit" data-target="about">${content.home.buttons[0]}</div>
-                        <div class="btn btn-rabbit" data-target="work">${content.home.buttons[1]}</div>
-                        <div class="btn btn-rabbit" data-target="contact">${content.home.buttons[2]}</div>
+                        <div class="btn btn-groups" data-target="about">${content.home.buttons[0]}</div>
+                        <div class="btn btn-groups" data-target="work">${content.home.buttons[1]}</div>
+                        <div class="btn btn-groups" data-target="contact">${content.home.buttons[2]}</div>
                     </div>
                     <div class="social-links">
                         <a href="https://github.com/AGNworks" target="_blank" class="social-card">
@@ -34,7 +39,7 @@ function updateContent(content) {
                         </a>
 
                         <a href="https://linkedin.com/in/adamgabornemeth" target="_blank" class="social-card">
-                            <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="LinkedIn">
+                            <img src="https://img.freepik.com/premium-vector/vector-circle-linkedin-logo-icon_534308-21668.jpg" alt="LinkedIn">
                             <span>LinkedIn</span>
                         </a>
 
@@ -48,27 +53,55 @@ function updateContent(content) {
                             <span>HeadHunter</span>
                         </a>
                     </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    `;
+        `;
+    }
+    else if (section === 'about') {
+        app.innerHTML = `
+            <div class="container main">
+                <div class="row">
+                    <div class="col-md-6 left animate__animated animate__slideInLeft" id="about_left">
+                        <img class="img-responsive img-rabbit" src="${content.about.image}">
+                    </div>
+                    <div class="col-md-6 right" id="about_right">
+                        <a href="#" class="btn btn-groups back" data-target="home">
+                            <i class="fa fa-angle-left" aria-hidden="true"></i> Home
+                        </a>
+                        <div id="watermark">
+                            <h2 class="page-title" text-center>${content.about.title}</h2>
+                            <div class="marker">a</div>
+                        </div>
+                        ${content.about.content.map(paragraph => `
+                            <p class="info">${paragraph}</p>
+                        `).join('')}
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    // Add similar blocks for 'work' and 'contact' sections
 
     // Add event listeners to buttons
     document.querySelectorAll('[data-target]').forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Handle navigation
-            console.log(`Navigate to ${btn.dataset.target}`);
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetSection = btn.dataset.target;
+            loadContent(currentLang).then(content => {
+                updateContent(content, targetSection);
+                // Scroll to top when changing sections
+                window.scrollTo(0, 0);
+            });
         });
     });
 }
 
+
 // Initialize the page
 document.addEventListener('DOMContentLoaded', () => {
-    // Set default language
-    let currentLang = 'en';
-
     // Load initial content
-    loadContent(currentLang).then(updateContent);
+    loadContent(currentLang).then(content => updateContent(content, currentSection));
 
     // Language switcher
     document.querySelectorAll('.lang-btn').forEach(btn => {
