@@ -16,8 +16,8 @@ function updateContent(content, section = 'home') {
         app.innerHTML = `
             <div class="container main">
                 <div class="row home">
-                    <div class="col-md-6 left">
-                        <img class="img-responsive img-rabbit" src="assets/images/home.jpg">
+                    <div class="col-md-6 left animate__animated animate__slideInLeft" id="home_left">
+                        <img class="img-responsive img-style " src="https://plus.unsplash.com/premium_vector-1733378341123-e021d04f332f?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
                     </div>
                     <div class="col-md-6 text-center right">
                         <div class="logo">
@@ -29,8 +29,8 @@ function updateContent(content, section = 'home') {
                         </p>
                     <div class="btn-group-vertical custom_btn animate__animated animate__slideInRight">
                         <div class="btn btn-groups" data-target="about">${content.home.buttons[0]}</div>
-                        <div class="btn btn-groups" data-target="work">${content.home.buttons[1]}</div>
-                        <div class="btn btn-groups" data-target="contact">${content.home.buttons[2]}</div>
+                        <div class="btn btn-groups" data-target="projects">${content.home.buttons[1]}</div>
+                        <div class="btn btn-groups" data-target="more_projects">${content.home.buttons[2]}</div>
                     </div>
                     <div class="social-links">
                         <a href="https://github.com/AGNworks" target="_blank" class="social-card">
@@ -62,7 +62,7 @@ function updateContent(content, section = 'home') {
         app.innerHTML = `
             <div class="container main">
                 <div class="row">
-                    <div class="col-md-6 left animate__animated animate__slideInLeft" id="about_left">
+                    <div class="col-md-6 left project-image animate__animated animate__slideInLeft" id="about_left">
                         <img class="img-responsive img-rabbit" src="${content.about.image}">
                     </div>
                     <div class="col-md-6 right" id="about_right">
@@ -71,13 +71,87 @@ function updateContent(content, section = 'home') {
                         </a>
                         <div id="watermark">
                             <h2 class="page-title" text-center>${content.about.title}</h2>
-                            <div class="marker">a</div>
+                            <div class="marker">A</div>
                         </div>
                         ${content.about.content.map(paragraph => `
                             <p class="info">${paragraph}</p>
                         `).join('')}
                     </div>
                 </div>
+            </div>
+        `;
+    }
+    else if (section === 'projects') {
+        app.innerHTML = `
+            <div class="container main">
+                <div class="row">
+                    <div class="col-12">
+                        <a href="#" class="btn btn-rabbit back" data-target="home">
+                            <i class="fa fa-angle-left" aria-hidden="true"></i> Home
+                        </a>
+                        <div id="watermark">
+                            <h2 class="page-title" text-center>${content.it_projects.title}</h2>
+                            <div class="marker">AI</div>
+                        </div>
+                        <p class='subtitle'>${content.it_projects.intro}</p>
+                    </div>
+                </div>
+
+                ${content.it_projects.projects.map(project => `
+                    <div class="row project-row">
+                        <div class="col-md-6 project-image">
+                            ${project.images.map(image => `
+                                <img class="img-responsive img-rabbit" src="${image}">
+                            `).join('')}
+                        </div>
+                        <div class="col-md-6 project-description">
+                            <h3 class="project-title">${project.title}</h3>
+                            <p class="project-info">${project.description}</p>
+                            ${project.link ? `
+                                <a href="${project.link}" target="_blank" class="project-link">
+                                    ${project.linkText || 'View on GitHub'}
+                                </a>
+                            ` : ''}
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+    }
+    else if (section === 'more_projects') {
+        app.innerHTML = `
+            <div class="container main">
+                <div class="row">
+                    <div class="col-12">
+                        <a href="#" class="btn btn-rabbit back" data-target="home">
+                            <i class="fa fa-angle-left" aria-hidden="true"></i> Home
+                        </a>
+                        <div id="watermark">
+                            <h2 class="page-title" text-center>${content.more_projects.title}</h2>
+                            <div class="marker">AI</div>
+                        </div>
+                        <p class='subtitle'>${content.more_projects.intro}</p>
+                    </div>
+                </div>
+
+                ${content.more_projects.projects.map(project => `
+                    <div class="row project-row">
+                        <div class="col-md-6 project-image">
+                            ${project.images.map(image => `
+                                <img class="img-responsive img-rabbit" src="${image}">
+                            `).join('')}
+                        </div>
+                        <div class="col-md-6 project-description">
+                            <h3 class="project-title">${project.title}</h3>
+                            <p class="project-info">${project.description}</p>
+                            ${project.link ? `
+                                <a href="${project.link}" target="_blank" class="project-link">
+                                    ${project.linkText || 'View on GitHub'}
+                                </a>
+                            ` : ''}
+                        </div>
+                    </div>
+                `).join('')}
             </div>
         `;
     }
