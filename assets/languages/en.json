@@ -1,18 +1,18 @@
 {
     "home": {
         "title": "Ádám Gábor Németh",
-        "description": "Hi, I am Ádám, Machine Learning (ML) Engineer living in Moscow, Russia. I am passionate about computer vision and classic engineering. I want to share this passion, working with like-minded individuals, bringing your projects to fruition.",
+        "description": "Hi, I’m Adam—a Python developer based in Moscow, Russia. I specialize in automating traditional design workflows using modern technologies. When I’m not coding, you’ll find me tinkering with CAD designs, 3D printing, hacking on IoT projects, or building things in my workshop.",
         "buttons": [
             "About",
-            "Projects",
-            "More projects"
+            "IT projects",
+            "Engineering projects"
         ]
     },
     "about": {
         "title": "About",
         "content": [
-            "Hello, my name is Ádám Gábor Németh. A ML Engineer, working on projects and creating not only virtually but in the physical world as well.",
-            "I graduated as a mechanical engineer from the Budapest University of Technology and Economics where I specialized in manufacturing automation. With time, I understood, that if I really want to keep step with the technological progress, I need to learn about neural networks and start using them in my projects. Therefore I completed a course at an <a href = 'https://neural-university.com' target='_blank'>online university</a>, with wrote a <a href='https://github.com/AGNworks/CarCam_NN' target='_blank'>diploma project</a> in the field of computer vision."
+            "Hello, I'm Ádám Gábor Németh - a Python developer specializing in automation. I'm working on microservice-based solutions for automated interior design and 3D rendering pipelines. Additionally, I'm building an interactive portfolio platform with real-time 3D model generation.",
+            "I graduated as a mechanical engineer from the Budapest University of Technology and Economics where I specialized in manufacturing automation. With time, I understood, that if I really want to keep step with the technological progress, I need to learn about neural networks and start using them in my projects. Therefore I completed a course at an <a href = 'https://neural-university.com' target='_blank'>online university</a>, with wrote a diploma project in the field of computer vision."
         ],
         "image": "assets/images/aboutAGN.jpg"
     },

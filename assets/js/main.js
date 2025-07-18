@@ -17,7 +17,7 @@ function updateContent(content, section = 'home') {
             <div class="container main">
                 <div class="row home">
                     <div class="col-md-6 left animate__animated animate__slideInLeft" id="home_left">
-                        <img class="img-responsive img-style " src="https://plus.unsplash.com/premium_vector-1733378341123-e021d04f332f?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        <img class="img-responsive img-style " src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpkeWN0ZW5hY2RsNDA1bGd5cW5yb3J1Z2NmZTc1NmsyOHpiMjJsciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/3YHuafV6XKDwOig2RB/giphy.gif">
                     </div>
                     <div class="col-md-6 text-center right">
                         <div class="logo">
