@@ -48,7 +48,7 @@ function updateContent(content, section = 'home') {
                             <span>Thingiverse</span>
                         </a>
 
-                        <a href="https://hh.ru/resume/a951a82aff0bbc92110039ed1f547634625068" target="_blank" class="social-card">
+                        <a href="https://hh.ru/resume/e34b1095ff0c2562c40039ed1f494e79634858" target="_blank" class="social-card">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/HeadHunter_logo.png" alt="HeadHunter">
                             <span>HeadHunter</span>
                         </a>
